@@ -1,0 +1,47 @@
+rules_version = '2';
+// Leaderboards for all Spectrum Tech Engine games (Firebase project spectrum-games).
+// games/{game}/alltime/{uid} and games/{game}/weeks/{week}/scores/{uid}: one best day per player per board.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+
+    // a nickname: 3 to 12 letters/numbers (any language), spaces . _ - allowed in the middle
+    function okName(n) {
+      return n is string && n.size() >= 3 && n.size() <= 12 && n.matches('^[\\p{L}\\p{N}][\\p{L}\\p{N} ._-]*[\\p{L}\\p{N}]$');
+    }
+
+    // a believable day: pay can't beat the best pay per delivery (75) plus an unused fuel card (25),
+    // and every delivery takes at least 3 seconds of driving
+    function okDay(d, uid) {
+      return d.keys().hasOnly(['uid', 'name', 'pay', 'deliveries', 'secs', 'at'])
+        && d.uid == uid && okName(d.name)
+        && d.pay is int && d.deliveries is int && d.secs is int
+        && d.deliveries >= 1 && d.deliveries <= 400
+        && d.pay >= 1 && d.pay <= d.deliveries * 75 + 25
+        && d.secs >= d.deliveries * 3 && d.secs <= 86400
+        && d.at == request.time;
+    }
+
+    function okGame(g) { return g.matches('^[a-z0-9-]{2,30}$'); }
+
+    match /games/{game}/alltime/{uid} {
+      allow get: if true;
+      allow list: if request.query.limit <= 100;
+      allow create: if okGame(game) && signedIn() && request.auth.uid == uid && okDay(request.resource.data, uid);
+      // only ever replaced by a better (or equal) day; the nickname can change
+      allow update: if signedIn() && request.auth.uid == uid && okDay(request.resource.data, uid)
+        && request.resource.data.pay >= resource.data.pay;
+      allow delete: if signedIn() && request.auth.uid == uid;
+    }
+
+    match /games/{game}/weeks/{week}/scores/{uid} {
+      allow get: if true;
+      allow list: if request.query.limit <= 100;
+      allow create: if okGame(game) && week.matches('^20[0-9]{2}-W[0-5][0-9]$') && signedIn() && request.auth.uid == uid && okDay(request.resource.data, uid);
+      allow update: if signedIn() && request.auth.uid == uid && okDay(request.resource.data, uid)
+        && request.resource.data.pay >= resource.data.pay;
+      allow delete: if signedIn() && request.auth.uid == uid;
+    }
+  }
+}
