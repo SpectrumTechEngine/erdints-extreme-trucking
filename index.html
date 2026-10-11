@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Edunts Extreme Trucking</title>
+<title>Erdint's Extreme Trucking</title>
 <meta name="description" content="Blast through the pick-up, haul it, blast through the drop-off. Ten crashes and your day is done.">
 <meta name="theme-color" content="#020617">
 <!-- Lets phones install this as an app with its own icon and name -->
@@ -12,12 +12,12 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Edunts Trucking">
+<meta name="apple-mobile-web-app-title" content="Erdint's Trucking">
 <!-- The picture and title WhatsApp shows under a link to the game -->
-<meta property="og:title" content="Edunts Extreme Trucking">
+<meta property="og:title" content="Erdint's Extreme Trucking">
 <meta property="og:description" content="Blast through the pick-up, haul it, blast through the drop-off. Ten crashes and your day is done.">
-<meta property="og:image" content="https://thespectrumtechengine.com/edunts-extreme-trucking/share.jpg">
-<meta property="og:url" content="https://thespectrumtechengine.com/edunts-extreme-trucking/">
+<meta property="og:image" content="https://thespectrumtechengine.com/erdints-extreme-trucking/share.jpg">
+<meta property="og:url" content="https://thespectrumtechengine.com/erdints-extreme-trucking/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +100,7 @@
   #intro .word { display: block; opacity: 0; transform: scale(5) rotate(-8deg); letter-spacing: -.02em; }
   #intro .word.in { animation: slam .32s cubic-bezier(.2,1.6,.4,1) forwards; }
   @keyframes slam { 0% { opacity: 0; transform: scale(5) rotate(-8deg); filter: blur(8px); } 70% { opacity: 1; filter: blur(0); } 100% { opacity: 1; transform: scale(1) rotate(-3deg); } }
-  #intro .w1 { font-size: clamp(3rem, 17vw, 9.5rem); color: #fff; text-shadow: 6px 6px 0 #b45309, 0 0 40px rgba(255,255,255,.35); }
+  #intro .w1 { font-size: clamp(2.6rem, 13vw, 8rem); color: #fff; text-shadow: 6px 6px 0 #b45309, 0 0 40px rgba(255,255,255,.35); }
   #intro .w2 { font-size: clamp(3.4rem, 19vw, 11rem); background: linear-gradient(180deg, #fef08a, #f59e0b 45%, #dc2626); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(6px 6px 0 #7f1d1d) drop-shadow(0 0 30px rgba(239,68,68,.6)); }
   #intro .w3 { font-size: clamp(2.6rem, 14.5vw, 8.2rem); color: #fbbf24; -webkit-text-stroke: 2px #fff; text-shadow: 6px 6px 0 #1e293b; }
   #intro.final .stack { animation: rumble .09s linear infinite; }
@@ -132,7 +132,7 @@
   <div id="hud" class="flex items-stretch gap-1.5 sm:gap-2 z-20">
     <div class="hud-chip rounded-xl px-2 py-1 flex-1 min-w-0" style="flex-grow:1.4">
       <div class="text-[10px] sm:text-xs text-slate-400 font-semibold">Pay</div>
-      <div id="hud-wage" class="font-display text-sm sm:text-xl text-emerald-400 leading-tight">€0</div>
+      <div id="hud-wage" class="font-display text-sm sm:text-xl text-emerald-400 leading-tight"><span class="cur">€</span>0</div>
     </div>
     <div class="hud-chip rounded-xl px-2 py-1 flex-1 min-w-0">
       <div class="text-[10px] sm:text-xs text-slate-400 font-semibold">Deliveries</div>
@@ -167,7 +167,7 @@
       <div class="mt-1 text-xs sm:text-base text-emerald-300 font-bold hidden" id="shift-card">💳 Fuel card: your next fill-up is free!</div>
     </div>
     <div id="beer-warning-banner" class="absolute top-2 left-2 right-2 z-20 hidden rounded-2xl border-4 border-red-500 bg-red-950/90 px-3 py-2 sm:py-3 text-center pointer-events-none">
-      <div class="can-flash font-display text-2xl sm:text-5xl leading-none">🍺 EDUNTS HAD A CAN 🍺</div>
+      <div class="can-flash font-display text-2xl sm:text-5xl leading-none">🍺 ERDINT HAD A CAN 🍺</div>
       <div class="mt-1 text-xs sm:text-base text-red-100 font-bold"><span id="can-count"></span>Steering reversed! Drive <span id="beer-countdown">10</span>s without crashing to sober up.</div>
       <div class="text-[10px] sm:text-xs text-red-300/90">Never drink and drive.</div>
     </div>
@@ -178,11 +178,11 @@
         🚛 Ten crashes and your day is done
       </div>
       <h1 class="text-3xl sm:text-5xl md:text-6xl font-black font-display tracking-tight text-white leading-none">
-        EDUNTS<br>
+        ERDINT'S<br>
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-600 text-glow-amber">EXTREME TRUCKING</span>
       </h1>
       <p class="text-slate-300 text-xs sm:text-sm max-w-md font-medium leading-relaxed">
-        🚛 <strong class="text-amber-400">Blast through the pick-up, haul it, blast through the drop-off.</strong> Every delivery pays <strong class="text-emerald-400">€50</strong>. Never stop.
+        🚛 <strong class="text-amber-400">Blast through the pick-up, haul it, blast through the drop-off.</strong> Every delivery pays <strong class="text-emerald-400"><span class="cur">€</span>50</strong>. Never stop.
       </p>
       <div class="flex flex-col sm:flex-row gap-3 w-full max-w-md">
         <button onclick="startTutorial()" class="flex-1 py-3.5 sm:py-4 bg-slate-800/90 hover:bg-slate-700 border border-slate-600 text-cyan-400 font-display font-black text-sm sm:text-base rounded-2xl shadow-lg transform active:scale-95 transition flex items-center justify-center gap-2">
@@ -200,7 +200,7 @@
           Truck stops sit off the road. Steer into the <span class="text-cyan-300 font-semibold">blue pick-up</span> lane and drive under the canopy to load up.
           Then haul it to the <span class="text-amber-300 font-semibold">orange drop-off</span> and drive through that too.
           Traffic gets faster and thicker with every delivery. Grab 🛡 shields, dodge the 🍺.
-          A tank lasts 8 deliveries: then fill up at the <span class="text-red-400 font-semibold">red ⛽ fuel stop</span> (€25).
+          A tank lasts 8 deliveries: then fill up at the <span class="text-red-400 font-semibold">red ⛽ fuel stop</span>. Fuel (<span class="cur">€</span>25 a fill-up) comes off your pay at the end of the day.
         </div>
         <div id="menu-best" class="text-amber-400 font-semibold hidden"></div>
       </div>
@@ -226,14 +226,16 @@
           <span class="font-display text-base">The day's docket</span>
           <span id="dk-date" class="text-xs text-slate-500"></span>
         </div>
-        <div class="text-xs text-slate-500 mb-2">Edunts Haulage Ltd. · Driver copy</div>
+        <div class="text-xs text-slate-500 mb-2">Erdint Haulage Ltd. · Driver copy</div>
         <div class="space-y-1 text-sm">
           <div class="flex justify-between"><span>Loads picked up</span><span id="dk-pickups" class="font-bold"></span></div>
           <div class="flex justify-between"><span>Loads delivered</span><span id="dk-deliveries" class="font-bold"></span></div>
-          <div class="flex justify-between"><span>Rate per delivery</span><span class="font-bold">€50.00</span></div>
-          <div id="dk-overtime-row" class="flex justify-between hidden"><span>🌙 On overtime (€75 each)</span><span id="dk-overtime" class="font-bold"></span></div>
-          <div id="dk-fuel-row" class="flex justify-between hidden"><span>⛽ Fuel (€25 a fill-up)</span><span id="dk-fuel" class="font-bold"></span></div>
+          <div class="flex justify-between"><span>Rate per delivery</span><span class="font-bold"><span class="cur">€</span>50.00</span></div>
+          <div id="dk-overtime-row" class="flex justify-between hidden"><span>🌙 On overtime (<span class="cur">€</span>75 each)</span><span id="dk-overtime" class="font-bold"></span></div>
+          <div class="flex justify-between"><span>Earned</span><span id="dk-earned" class="font-bold"></span></div>
+          <div id="dk-fuel-row" class="flex justify-between hidden"><span id="dk-fuel-label">⛽ Fuel bill</span><span id="dk-fuel" class="font-bold text-red-700"></span></div>
           <div id="dk-card-row" class="flex justify-between hidden"><span>💳 Free fill-ups (fuel card)</span><span id="dk-card" class="font-bold"></span></div>
+          <div id="dk-spare-row" class="flex justify-between hidden"><span>💳 Unused fuel card</span><span class="font-bold text-emerald-700">+<span class="cur">€</span>25.00</span></div>
           <div class="flex justify-between text-slate-600"><span>Distance driven</span><span id="dk-distance"></span></div>
           <div class="flex justify-between text-slate-600"><span>Time on the road</span><span id="dk-time"></span></div>
           <div class="flex justify-between text-slate-600"><span>Best run without a crash</span><span id="dk-streak"></span></div>
@@ -293,7 +295,7 @@
   <div class="glow"></div>
   <div class="key">🔑</div>
   <div class="stack">
-    <span class="word w1">EDUNTS</span>
+    <span class="word w1">ERDINT'S</span>
     <span class="word w2">EXTREME</span>
     <span class="word w3">TRUCKING</span>
     <div class="sub">Blast through. Never stop.</div>
@@ -303,7 +305,7 @@
       <rect x="-400" y="70" width="380" height="8" fill="rgba(245,158,11,.5)"/><rect x="-300" y="100" width="300" height="5" fill="rgba(255,255,255,.35)"/><rect x="-360" y="125" width="340" height="6" fill="rgba(245,158,11,.4)"/>
       <rect x="10" y="30" width="330" height="100" rx="6" fill="#e2e8f0"/>
       <rect x="10" y="118" width="330" height="10" fill="#f59e0b"/>
-      <text x="175" y="98" text-anchor="middle" font-family="Russo One, Impact, sans-serif" font-size="54" fill="#0f172a" font-style="italic">EDUNTS</text>
+      <text x="175" y="98" text-anchor="middle" font-family="Russo One, Impact, sans-serif" font-size="54" fill="#0f172a" font-style="italic">ERDINT</text>
       <rect x="345" y="120" width="30" height="10" fill="#334155"/>
       <path d="M372 50 h70 l40 34 v46 h-110 z" fill="#f59e0b"/>
       <path d="M440 56 l34 30 h-34 z" fill="#0f172a"/>
@@ -457,10 +459,31 @@ let W = 0, H = 0, DPR = 1;
 const road = { x: 0, w: 0, laneW: 0, bayW: 0 };
 let truckW = 40, truckH = 108;
 const MAX_CRASHES = 10, PAY = 50, PX_PER_M = 8;
+// Money sign for where the player is: the phone's time zone first (so an Irish phone set to UK English still gets €),
+// then its language region. The numbers never change, only the sign. Anywhere unknown gets €.
+const CUR = (() => {
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    const byZone = { 'Europe/London': '£', 'Europe/Belfast': '£', 'Europe/Isle_of_Man': '£', 'Europe/Jersey': '£', 'Europe/Guernsey': '£',
+      'Europe/Istanbul': '₺', 'Europe/Kiev': '₴', 'Europe/Kyiv': '₴', 'Europe/Moscow': '₽', 'Asia/Kolkata': '₹', 'Asia/Calcutta': '₹',
+      'Asia/Tokyo': '¥', 'Asia/Shanghai': '¥', 'Asia/Seoul': '₩', 'Asia/Manila': '₱', 'Africa/Lagos': '₦', 'Asia/Jerusalem': '₪',
+      'Asia/Bangkok': '฿', 'Asia/Ho_Chi_Minh': '₫', 'Asia/Saigon': '₫', 'Africa/Johannesburg': 'R', 'Asia/Singapore': '$', 'Asia/Hong_Kong': '$' };
+    if (byZone[tz]) return byZone[tz];
+    if (tz.startsWith('Europe/')) return '€';
+    const lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+    let region = '';
+    try { region = new Intl.Locale(lang).maximize().region || ''; } catch (e) { region = (lang.split('-')[1] || '').toUpperCase(); }
+    const byRegion = { GB: '£', IN: '₹', JP: '¥', CN: '¥', KR: '₩', PH: '₱', NG: '₦', IL: '₪', TH: '฿', VN: '₫', ZA: 'R', BR: 'R$', TR: '₺', UA: '₴', RU: '₽' };
+    if (byRegion[region]) return byRegion[region];
+    if (tz.startsWith('America/') || tz.startsWith('Australia/') || tz.startsWith('Pacific/') || ['US', 'CA', 'AU', 'NZ', 'MX', 'SG', 'HK'].includes(region)) return '$';
+  } catch (e) {}
+  return '€';
+})();
+document.querySelectorAll('.cur').forEach(e => { e.textContent = CUR; });
 // The night shift: from €500 it gets dark and every delivery pays overtime (time and a half).
 // Morning comes after €500 of overtime, then night falls again after another €250 of day work, and so on.
 const OVERTIME_PAY = 75, FIRST_NIGHT = 500, NIGHT_LEN = 500, DAY_LEN = 250;
-// Two crashes while he's had a can sobers Edunts up (so one can costs at most two trucks).
+// Two crashes while he's had a can sobers Erdint up (so one can costs at most two trucks).
 // Shield saves don't count, and the count starts again with every new can.
 const SOBER_AFTER_CRASHES = 2;
 let drunkCrashes = 0;
@@ -603,7 +626,7 @@ function updateTutorialPrompt() {
     ['Step 2: Press RIGHT (►) to steer right', 'Use the right arrow, the D key, or the on-screen ► button.'],
     ['Step 3: Hold DRIVE (🚀) to floor it', 'Hold W, the up arrow, or the green DRIVE button. Need to slow down? Tap Space, S or the red BRAKE button.'],
     ['Step 4: Drive through the blue pick-up', 'Watch for the truck stop beside the road. Steer into its lane and drive under the canopy. No stopping.'],
-    ['Step 5: Drive through the orange drop-off', "You're loaded. Haul it to the drop-off and drive through. That's €50."],
+    ['Step 5: Drive through the orange drop-off', `You're loaded. Haul it to the drop-off and drive through. That's ${CUR}50.`],
     ['🎓 Training complete!', 'Out on the real road, traffic hits back. Ten crashes ends your day. Starting now…']
   ];
   const [t, d] = steps[tutorialStep];
@@ -636,7 +659,9 @@ function gameOver() {
   isPlaying = false; stopTechnoTrack(); drunkTimer = 0; setDrunkAudio(0); playSound('end'); updateHUD(true);
   document.getElementById('beer-warning-banner').classList.add('hidden');
   hideShiftBanner();
-  const pay = wages, best = getBest(), newBest = pay > best;
+  // the fuel bill comes off at the end of the day; a fuel card he never used is paid back as €25
+  const spare = fuelCard ? FUEL_COST : 0;
+  const pay = Math.max(0, wages - fuelSpent + spare), best = getBest(), newBest = pay > best;
   if (newBest) setBest(pay);
   if (!isTutorialMode) { ste('value', 'deliveries', deliveriesCount); ste('value', 'wages', wages); if (overtimeDeliveries) ste('detail', 'reached-overtime'); ste('value', 'minutes-driven', +(elapsedTime / 60).toFixed(1)); ste('value', 'km-driven', +(distance / PX_PER_M / 1000).toFixed(1)); if (newBest) ste('detail', 'new-best-day'); }
   const mins = Math.floor(elapsedTime / 60), secs = Math.floor(elapsedTime % 60);
@@ -646,14 +671,18 @@ function gameOver() {
   document.getElementById('dk-distance').textContent = (distance / PX_PER_M / 1000).toFixed(1) + ' km';
   document.getElementById('dk-time').textContent = `${mins}m ${String(secs).padStart(2, '0')}s`;
   document.getElementById('dk-streak').textContent = bestStreak + (bestStreak === 1 ? ' delivery' : ' deliveries');
-  document.getElementById('dk-net').textContent = '€' + pay.toFixed(2);
-  document.getElementById('dk-title').textContent = endReason === 'fuel' ? 'Out of fuel! Edunts walked home.' : "Truck's totalled. Day over.";
+  document.getElementById('dk-net').textContent = CUR + pay.toFixed(2);
+  document.getElementById('dk-earned').textContent = CUR + wages.toFixed(2);
+  document.getElementById('dk-title').textContent = endReason === 'fuel' ? 'Out of fuel! Erdint walked home.' : "Truck's totalled. Day over.";
   document.getElementById('dk-trucks').textContent = crashCount;
   document.getElementById('dk-fuel-row').classList.toggle('hidden', !fuelSpent);
-  document.getElementById('dk-fuel').textContent = '-€' + fuelSpent.toFixed(2);
+  const paidFills = fuelSpent / FUEL_COST;
+  document.getElementById('dk-fuel-label').textContent = `⛽ Fuel bill (${paidFills} fill-up${paidFills === 1 ? '' : 's'})`;
+  document.getElementById('dk-fuel').textContent = '-' + CUR + fuelSpent.toFixed(2);
+  document.getElementById('dk-spare-row').classList.toggle('hidden', !spare);
   document.getElementById('dk-card-row').classList.toggle('hidden', !freeFills);
   document.getElementById('dk-card').textContent = freeFills;
-  document.getElementById('dk-best').textContent = 'Best day: €' + Math.max(pay, best).toFixed(2);
+  document.getElementById('dk-best').textContent = 'Best day: ' + CUR + Math.max(pay, best).toFixed(2);
   document.getElementById('dk-newbest').classList.toggle('hidden', !newBest || pay === 0);
   let rating;
   if (deliveriesCount === 0) rating = 'Not a single drop-off. Steer into the truck stop lanes, not the traffic.';
@@ -665,7 +694,7 @@ function gameOver() {
   document.getElementById('dk-overtime-row').classList.toggle('hidden', !overtimeDeliveries);
   document.getElementById('dk-overtime').textContent = overtimeDeliveries + (overtimeDeliveries === 1 ? ' delivery' : ' deliveries');
   lastDay = { pay, deliveries: deliveriesCount, km: (distance / PX_PER_M / 1000).toFixed(1), time: `${mins}m ${String(secs).padStart(2, '0')}s`,
-    streak: bestStreak, newBest: newBest && pay > 0, rating, shared: false, overtime: overtimeDeliveries, fuel: endReason === 'fuel', fuelSpent, freeFills };
+    streak: bestStreak, newBest: newBest && pay > 0, rating, shared: false, overtime: overtimeDeliveries, fuel: endReason === 'fuel', fuelSpent, freeFills, spare };
   if (!isTutorialMode) { if (endReason === 'fuel') ste('detail', 'ran-out-of-fuel'); if (fuelStops) ste('value', 'fuel-stops', fuelStops); }
   const ov = document.getElementById('gameover-overlay');
   ov.classList.remove('hidden');
@@ -677,7 +706,7 @@ function gameOver() {
 }
 
 /* ============================ Sharing the docket ============================ */
-const GAME_URL = 'https://thespectrumtechengine.com/edunts-extreme-trucking/';
+const GAME_URL = 'https://thespectrumtechengine.com/erdints-extreme-trucking/';
 let lastDay = null, docketGuard = 0, newDayArmed = false, newDayTimer = 0;
 
 // "Start a new day" asks for a second tap until the docket has been shared
@@ -712,7 +741,7 @@ async function makeDocketImage() {
   bg.addColorStop(0, '#1e293b'); bg.addColorStop(1, '#020617');
   x.fillStyle = bg; x.fillRect(0, 0, W, H);
   x.textAlign = 'center';
-  x.font = disp(92); x.fillStyle = '#ffffff'; x.fillText('EDUNTS', W / 2, 150);
+  x.font = disp(92); x.fillStyle = '#ffffff'; x.fillText("ERDINT'S", W / 2, 150);
   const g = x.createLinearGradient(0, 180, 0, 260); g.addColorStop(0, '#fef08a'); g.addColorStop(.5, '#f59e0b'); g.addColorStop(1, '#dc2626');
   x.font = disp(70); x.fillStyle = g; x.fillText('EXTREME TRUCKING', W / 2, 250);
 
@@ -721,9 +750,9 @@ async function makeDocketImage() {
   x.save(); x.rotate(-0.015);
   x.fillStyle = '#fffbeb'; x.shadowColor = 'rgba(0,0,0,.5)'; x.shadowBlur = 40; x.fillRect(px, py, pw, ph); x.shadowBlur = 0;
   x.textAlign = 'left'; x.fillStyle = '#0f172a'; x.font = disp(46); x.fillText("The day's docket", px + 50, py + 85);
-  x.font = body(28, 500); x.fillStyle = '#64748b'; x.fillText('Edunts Haulage Ltd. · Driver copy', px + 50, py + 130);
+  x.font = body(28, 500); x.fillStyle = '#64748b'; x.fillText('Erdint Haulage Ltd. · Driver copy', px + 50, py + 130);
   x.setLineDash([14, 10]); x.strokeStyle = '#94a3b8'; x.lineWidth = 3; x.beginPath(); x.moveTo(px + 50, py + 160); x.lineTo(px + pw - 50, py + 160); x.stroke(); x.setLineDash([]);
-  const rows = [['Loads delivered', String(d.deliveries)], ...(d.overtime ? [['🌙 On overtime', String(d.overtime)]] : []), ...(d.fuelSpent ? [['⛽ Fuel', '-€' + d.fuelSpent]] : []), ...(d.freeFills ? [['💳 Free fill-ups', String(d.freeFills)]] : []), ['Distance driven', d.km + ' km'], ['Time on the road', d.time], ['Best run without a crash', String(d.streak)]];
+  const rows = [['Loads delivered', String(d.deliveries)], ...(d.overtime ? [['🌙 On overtime', String(d.overtime)]] : []), ...(d.fuelSpent || d.spare ? [['⛽ Fuel bill', (d.fuelSpent - d.spare < 0 ? '+' + CUR + (d.spare - d.fuelSpent) : '-' + CUR + (d.fuelSpent - d.spare))]] : []), ['Distance driven', d.km + ' km'], ['Time on the road', d.time], ['Best run without a crash', String(d.streak)]];
   rows.forEach(([k, v], i) => {
     const y = py + 225 + i * (rows.length > 5 ? 50 : 62);
     x.textAlign = 'left'; x.font = body(36, 600); x.fillStyle = '#334155'; x.fillText(k, px + 50, y);
@@ -731,14 +760,14 @@ async function makeDocketImage() {
   });
   x.fillStyle = '#0f172a'; x.fillRect(px + 50, py + 480, pw - 100, 5);
   x.textAlign = 'left'; x.font = disp(48); x.fillText("Day's pay", px + 50, py + 565);
-  x.textAlign = 'right'; x.font = disp(76); x.fillStyle = '#047857'; x.fillText('€' + d.pay.toFixed(2), px + pw - 50, py + 575);
+  x.textAlign = 'right'; x.font = disp(76); x.fillStyle = '#047857'; x.fillText(CUR + d.pay.toFixed(2), px + pw - 50, py + 575);
   if (d.newBest) { x.textAlign = 'center'; x.font = disp(38); x.fillStyle = '#b45309'; x.fillText('🏆 Best day yet!', px + pw / 2, py + 650); }
   x.restore();
 
   // Invite and logo
   x.textAlign = 'center';
   x.font = disp(50); x.fillStyle = '#fbbf24'; x.fillText('Can you beat my day?', W / 2, H - 230);
-  x.font = body(32, 700); x.fillStyle = '#e2e8f0'; x.fillText('thespectrumtechengine.com/edunts-extreme-trucking', W / 2, H - 175);
+  x.font = body(32, 700); x.fillStyle = '#e2e8f0'; x.fillText('thespectrumtechengine.com/erdints-extreme-trucking', W / 2, H - 175);
   const logo = await loadImg(document.querySelector('img.ste-logo').src);
   if (logo) { const lw = 460, lh = lw * logo.height / logo.width; x.drawImage(logo, (W - lw) / 2, H - 140, lw, lh); }
   return new Promise(res => c.toBlob(res, 'image/jpeg', 0.9));
@@ -746,7 +775,7 @@ async function makeDocketImage() {
 
 function docketMessage() {
   const d = lastDay;
-  return `🚛 I earned €${d.pay} on Edunts Extreme Trucking! ${d.deliveries} ${d.deliveries === 1 ? 'delivery' : 'deliveries'} ${d.fuel ? 'before I ran out of fuel' : 'before my truck was totalled'}` +
+  return `🚛 I earned ${CUR}${d.pay} on Erdint's Extreme Trucking! ${d.deliveries} ${d.deliveries === 1 ? 'delivery' : 'deliveries'} ${d.fuel ? 'before I ran out of fuel' : 'before my truck was totalled'}` +
          (d.overtime ? `, and I worked ${d.overtime} ${d.overtime === 1 ? 'delivery' : 'deliveries'} of overtime! 🌙` : '.') +
          `\n\nCan you beat my day? Play here:\n${GAME_URL}`;
 }
@@ -759,7 +788,7 @@ async function shareDocket() {
   const text = docketMessage(), wa = 'https://wa.me/?text=' + encodeURIComponent(text);
   if (!(navigator.share && navigator.canShare)) { if (!window.open(wa, '_blank')) location.href = wa; return; }
   let file = null;
-  try { const blob = await makeDocketImage(); if (blob) file = new File([blob], 'edunts-docket.jpg', { type: 'image/jpeg' }); } catch (e) { console.warn(e); }
+  try { const blob = await makeDocketImage(); if (blob) file = new File([blob], 'erdints-docket.jpg', { type: 'image/jpeg' }); } catch (e) { console.warn(e); }
   try {
     if (file && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text }); return; }
   } catch (e) { if (e && e.name === 'AbortError') return; }
@@ -774,7 +803,7 @@ function showMenu() {
 }
 function refreshMenuBest() {
   const b = getBest(), el = document.getElementById('menu-best');
-  if (b > 0) { el.textContent = '🏆 Your best day: €' + b.toFixed(2); el.classList.remove('hidden'); }
+  if (b > 0) { el.textContent = '🏆 Your best day: ' + CUR + b.toFixed(2); el.classList.remove('hidden'); }
 }
 function togglePause() {
   if (!isPlaying) return;
@@ -869,15 +898,15 @@ function driveThrough(d) {
   d.done = true; d.flash = 1;
   activeDepot = null;
   if (d.kind === 'fuel') {
-    // fill up: costs €25 off the day's pay; any load on board stays on board
+    // fill up: €25 goes on the fuel bill (paid at the end of the day, so Pay never drops); any load on board stays on board
     const free = fuelCard;
     if (free) { fuelCard = false; freeFills++; }
-    else { wages = Math.max(0, wages - FUEL_COST); fuelSpent += FUEL_COST; }
+    else fuelSpent += FUEL_COST;
     fuelStops++;
     sinceFill = 0; fuelLow = false; fuelMissed = 0; outOfFuel = false;
     burst(player.x, player.y, 34, free ? ['#4ade80', '#bbf7d0', '#ffffff', '#fde047'] : ['#ef4444', '#fca5a5', '#ffffff', '#fde047'], 8, 'confetti');
     if (free) addText(W / 2, H * 0.42, '💳 FUEL CARD! Tank full, free', '#4ade80', 26, 1.8);
-    else addText(W / 2, H * 0.42, `⛽ TANK FULL! -€${FUEL_COST}`, '#f87171', 30, 1.6);
+    else { addText(W / 2, H * 0.42, '⛽ TANK FULL!', '#f87171', 30, 1.6); addText(W / 2, H * 0.42 + 34, `${CUR}${FUEL_COST} on the fuel bill`, '#fca5a5', 17, 1.8); }
     playSound('pickup');
     distToNext = carrying ? 900 + rand(0, 700) : 1200 + rand(0, 600);
   } else if (d.kind === 'pickup') {
@@ -893,7 +922,7 @@ function driveThrough(d) {
     wages += earned;
     if (night) overtimeDeliveries++;
     burst(player.x, player.y, 70, ['#fbbf24', '#34d399', '#22d3ee', '#f472b6', '#ffffff'], 11, 'confetti');
-    addText(W / 2, H * 0.4, night ? `DELIVERED! +€${earned} OVERTIME` : `DELIVERED! +€${earned}`, night ? '#a5b4fc' : '#34d399', night ? 32 : 36, 1.5);
+    addText(W / 2, H * 0.4, night ? `DELIVERED! +${CUR}${earned} OVERTIME` : `DELIVERED! +${CUR}${earned}`, night ? '#a5b4fc' : '#34d399', night ? 32 : 36, 1.5);
     if (!isTutorialMode) checkShift();
     if (!isTutorialMode) useFuel();
     if (streak >= 3) addText(W / 2, H * 0.4 + 40, `${streak} in a row without a crash!`, '#fde047', 16, 1.5);
@@ -912,7 +941,7 @@ function useFuel() {
   addText(W / 2, H * 0.4 + 72, '⛽ Running low! Next stops are fuel stations', '#f87171', 17, 2.6);
   let seen = false;
   try { seen = localStorage.getItem('edunts-fuel-seen') === '1'; localStorage.setItem('edunts-fuel-seen', '1'); } catch (e) {}
-  if (!seen) addText(W / 2, H * 0.4 + 100, `Drive through the red ⛽ stop to fill up (€${FUEL_COST})`, '#fecaca', 15, 3.6);
+  if (!seen) addText(W / 2, H * 0.4 + 100, `Drive through the red ⛽ stop to fill up (${CUR}${FUEL_COST})`, '#fecaca', 15, 3.6);
 }
 function missFuel() {
   fuelMissed++;
@@ -928,7 +957,7 @@ function missFuel() {
     distToNext = 350;
   } else {
     rollingStop = true; endReason = 'fuel';
-    addText(W / 2, H * 0.4, 'Out of fuel! Edunts walked home.', '#ef4444', 24, 4);
+    addText(W / 2, H * 0.4, 'Out of fuel! Erdint walked home.', '#ef4444', 24, 4);
   }
 }
 
@@ -944,8 +973,8 @@ function checkShift() {
 }
 function showShiftBanner(isNight) {
   const b = document.getElementById('shift-banner');
-  document.getElementById('shift-title').textContent = isNight ? '🌙 EDUNTS WORKING OVERTIME 🌙' : '☀️ MORNING! ☀️';
-  document.getElementById('shift-sub').textContent = isNight ? `Time and a half — every delivery now pays €${OVERTIME_PAY}` : `Edunts made it through the night. Back to €${PAY} a delivery. 🛡️🛡️ Bonus: double shield!`;
+  document.getElementById('shift-title').textContent = isNight ? '🌙 ERDINT WORKING OVERTIME 🌙' : '☀️ MORNING! ☀️';
+  document.getElementById('shift-sub').textContent = isNight ? `Time and a half — every delivery now pays ${CUR}${OVERTIME_PAY}` : `Erdint made it through the night. Back to ${CUR}${PAY} a delivery. 🛡️🛡️ Bonus: double shield!`;
   document.getElementById('shift-card').classList.toggle('hidden', isNight);
   b.classList.remove('hidden', 'night', 'day'); b.classList.add(isNight ? 'night' : 'day');
   b.style.opacity = '1';
@@ -1179,7 +1208,8 @@ function jobInfo() {
 }
 function updateHUD(force) {
   if (force) for (const k in hudCache) delete hudCache[k];
-  setHUD('hud-wage', '<span style="white-space:nowrap">€' + wages + (night ? '<span style="font-size:.75em"> 🌙</span>' : '') + '</span>');
+  setHUD('hud-wage', '<span style="white-space:nowrap">' + CUR + wages + (night ? '<span style="font-size:.75em"> 🌙</span>' : '') + '</span>' +
+    (fuelSpent ? '<div style="font-size:.62em;line-height:1.2;color:#f87171;white-space:nowrap">⛽ -' + CUR + fuelSpent + '</div>' : ''));
   setHUD('hud-deliveries', String(deliveriesCount) + (streak >= 3 ? ' <span class="text-xs">🔥' + streak + '</span>' : ''));
   const left = MAX_CRASHES - crashCount;
   setHUD('hud-crashes', `<span class="${left <= 3 ? 'text-red-400' : ''}">${crashCount}/${MAX_CRASHES}</span>`);
@@ -1196,7 +1226,7 @@ function updateHUD(force) {
   else if (j.side) text = `${j.kind === 'fuel' ? '⛽ Fuel' : j.kind === 'pickup' ? '📦 Pick-up' : '🏁 Drop-off'} on the ${j.side.toUpperCase()} ${j.side === 'left' ? '◄◄' : '►►'} ${j.m} m`;
   else if (j.kind === 'fuel') text = `⛽ ${outOfFuel ? 'LAST CHANCE! Fuel stop' : 'Fuel stop'} in ${j.m} m${fuelCard ? ' · 💳 free' : ''}`;
   else if (j.kind === 'pickup') text = `📦 Next pick-up in ${j.m} m`;
-  else text = `🚛 Loaded! Drop-off in ${j.m} m · €${payNow()} waiting${night ? ' (overtime)' : ''}`;
+  else text = `🚛 Loaded! Drop-off in ${j.m} m · ${CUR}${payNow()} waiting${night ? ' (overtime)' : ''}`;
   setHUD('hud-job', text);
   const urgent = isPlaying && !!j.side && j.m < 90;
   job.classList.toggle('urgent', urgent);
@@ -1367,7 +1397,7 @@ function drawTruck() {
   } else {
     ctx.save(); ctx.translate(0, ty + th / 2); ctx.rotate(-Math.PI / 2);
     ctx.fillStyle = 'rgba(226,232,240,.5)'; ctx.font = `${Math.max(8, w * 0.3)}px "Russo One", Impact, sans-serif`;
-    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('EDUNTS', 0, 0); ctx.restore();
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('ERDINT', 0, 0); ctx.restore();
   }
   ctx.fillStyle = '#f59e0b'; ctx.fillRect(-w / 2, ty + th - 5, w, 3);
   ctx.fillStyle = '#f59e0b'; rr(-w / 2 + 1, -h / 2, w - 2, cabH, 7); ctx.fill();

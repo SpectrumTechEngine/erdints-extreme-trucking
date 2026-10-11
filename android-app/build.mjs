@@ -7,7 +7,7 @@ import { execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 
-const APK_NAME = "edunts-extreme-trucking.apk";
+const APK_NAME = "erdints-extreme-trucking.apk";
 const ICON = "icon-512.png";                 // the website's own icon, in the repo's top folder
 const ORIENTATION = "portrait";        // null = the screen turns freely
 const PERMISSIONS = ["VIBRATE"];          // extra Android permissions this app needs
@@ -41,6 +41,9 @@ await sharp(iconPath).resize(192, 192).png().toFile(path.join(here, "www", "icon
 // 2. Create the Android project (fresh each time, so nothing goes stale)
 fs.rmSync(path.join(here, "android"), { recursive: true, force: true });
 run("npx cap add android");
+// Android text files need an apostrophe written as \' (for the name "Erdint's Trucking")
+const stringsFile = path.join(here, "android", "app", "src", "main", "res", "values", "strings.xml");
+fs.writeFileSync(stringsFile, fs.readFileSync(stringsFile, "utf8").replace(/(?<!\\)'/g, "\\'"));
 
 // 3. App icon: the website icon, shrunk a little so round and squircle icon shapes don't cut it off
 fs.mkdirSync(path.join(here, "assets"), { recursive: true });

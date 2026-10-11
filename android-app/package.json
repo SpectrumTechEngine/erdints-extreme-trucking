@@ -1,7 +1,7 @@
 {
-  "name": "edunts-extreme-trucking-android",
+  "name": "erdints-extreme-trucking-android",
   "private": true,
-  "description": "Builds the Android APK for Edunts Extreme Trucking. See README.md in this folder.",
+  "description": "Builds the Android APK for Erdint's Extreme Trucking. See README.md in this folder.",
   "dependencies": {
     "@capacitor/android": "^8.5.2",
     "@capacitor/cli": "^8.5.2",
