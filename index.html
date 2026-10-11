@@ -1687,8 +1687,8 @@ import { getFirestore, doc, getDoc, setDoc, deleteDoc, collection, query, orderB
 import { initializeAppCheck, ReCaptchaEnterpriseProvider } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app-check.js';
 
 const GAME = 'erdints';
-// App Check key (reCAPTCHA Enterprise) for the spectrum-games project; empty until it is set up
-const APP_CHECK_KEY = '';
+// App Check key (reCAPTCHA Enterprise, key "Games website" in the spectrum-games project; works on thespectrumtechengine.com and localhost)
+const APP_CHECK_KEY = '6Lc86ektAAAAAPvxqV5ePGWKIdLHdHF46UyBb3wR';
 const app = initializeApp({
   apiKey: 'AIzaSyAJ9SEyvR8BWACnCZ-75GyW7LNJf_E93pM',
   authDomain: 'spectrum-games-b161b.firebaseapp.com',
@@ -1697,7 +1697,7 @@ const app = initializeApp({
   messagingSenderId: '171924101127',
   appId: '1:171924101127:web:76887b8e0731740726f2a2',
 });
-if (APP_CHECK_KEY && location.hostname !== 'localhost') {
+if (APP_CHECK_KEY) {
   try { initializeAppCheck(app, { provider: new ReCaptchaEnterpriseProvider(APP_CHECK_KEY), isTokenAutoRefreshEnabled: true }); } catch (e) { console.warn(e); }
 }
 const auth = getAuth(app), db = getFirestore(app);
