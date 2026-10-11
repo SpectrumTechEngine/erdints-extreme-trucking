@@ -43,7 +43,9 @@ fs.rmSync(path.join(here, "android"), { recursive: true, force: true });
 run("npx cap add android");
 // Android text files need an apostrophe written as \' (for the name "Erdint's Trucking")
 const stringsFile = path.join(here, "android", "app", "src", "main", "res", "values", "strings.xml");
-fs.writeFileSync(stringsFile, fs.readFileSync(stringsFile, "utf8").replace(/(?<!\\)'/g, "\\'"));
+// (only inside <string> text: the file's first line uses ' quotes that must stay as they are)
+fs.writeFileSync(stringsFile, fs.readFileSync(stringsFile, "utf8").replace(/(<string[^>]*>)([^<]*)(<\/string>)/g,
+  (m, open, text, close) => open + text.replace(/(?<!\\)'/g, "\\'") + close));
 
 // 3. App icon: the website icon, shrunk a little so round and squircle icon shapes don't cut it off
 fs.mkdirSync(path.join(here, "assets"), { recursive: true });
