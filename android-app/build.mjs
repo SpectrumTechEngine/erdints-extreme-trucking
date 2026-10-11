@@ -26,9 +26,10 @@ need("KEYSTORE_PASSWORD");
 const build = parseInt(process.env.BUILD_NUMBER || "1", 10);
 const { default: sharp } = await import("sharp");
 
-// The colour at the icon's left edge becomes the background behind the Android icon and the splash screen
+// The colour at the middle of the icon's top edge becomes the background behind the Android icon and the splash screen
+// (not the left edge: on this icon that spot is one of the truck's brown speed lines)
 const iconPath = path.join(repo, ICON);
-const { data } = await sharp(iconPath).resize(512, 512).ensureAlpha().extract({ left: 12, top: 256, width: 1, height: 1 }).raw().toBuffer({ resolveWithObject: true });
+const { data } = await sharp(iconPath).resize(512, 512).ensureAlpha().extract({ left: 256, top: 8, width: 1, height: 1 }).raw().toBuffer({ resolveWithObject: true });
 const hex = (n) => n.toString(16).padStart(2, "0");
 const ICON_BG = data[3] < 128 ? "#0f0c29" : `#${hex(data[0])}${hex(data[1])}${hex(data[2])}`;
 
